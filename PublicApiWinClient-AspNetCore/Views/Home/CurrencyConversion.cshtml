@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Currency conversion";
+}
+
+<h2>Currency dates from Fixer.io:</h2>
+<div class="col-md-12">
+    <h3>Current date is: <span data-bind="text:date"></span></h3>
+</div>
+
+<div class="col-md-12">
+    Reference currency is: <span data-bind="text:base"></span>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Currency</th>
+        <th scope="col">Conversion rate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>GBP</td>
+        <td><span data-bind="text:rates.GBP"></span></td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>CZK</td>
+        <td><span data-bind="text:rates.CZK"></span></td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>RON</td>
+        <td><span data-bind="text:rates.RON"></span></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <input type="text" class="form-control" placeholder="amount" aria-label="valueForConversion" value="0" aria-describedby="basic-addon1" required>
+        <div class="invalid-feedback">
+            Please provide a valid amount.
+        </div>
+    </div>
+    <div class="input-group-prepend">
+        <label class="input-group-text" for="fromCurrency">From currency:</label>
+    </div>
+    <select class="custom-select" id="fromCurrency">
+        @*<option selected>Choose...</option>*@
+        <option selected="1">EUR</option>
+        <option value="2">GBP</option>
+        <option value="3">CZK</option>
+        <option value="3">RON</option>
+    </select>
+</div>
+
+@Html.ActionLink("Convert now!", "GetConversion", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <input type="text" class="form-control" placeholder="result" aria-label="valueAfterConversion" value="0" aria-describedby="basic-addon2">
+    </div>
+    <div class="input-group-prepend">
+        <label class="input-group-text" for="toCurrency">To currency:</label>
+    </div>
+    <select class="custom-select" id="toCurrency">
+        @*<option selected>Choose...</option>*@
+        <option selected="1">EUR</option>
+        <option value="2">GBP</option>
+        <option value="3">CZK</option>
+        <option value="3">RON</option>
+    </select>
+</div>
+
+<script>
+    var currency = Object();
+    $(document).ready(function () {
+            $.get("@Url.Action("GetCurrency", "Home")", function (response) {
+                //response
+                console.log(response);
+                currency = ko.mapping.fromJS(response);  //populate the currency object
+                ko.applyBindings(currency);
+
+            });
+    });
+
+</script>

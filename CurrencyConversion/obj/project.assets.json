@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\PublicApiWinClient\\CurrencyConversion\\CurrencyConversion.csproj",
+      "projectUniqueName": "D:\\Projects\\PublicApiWinClient-AspNetCore\\CurrencyConversion\\CurrencyConversion.csproj",
       "projectName": "CurrencyConversion",
-      "projectPath": "D:\\Projects\\PublicApiWinClient\\CurrencyConversion\\CurrencyConversion.csproj",
+      "projectPath": "D:\\Projects\\PublicApiWinClient-AspNetCore\\CurrencyConversion\\CurrencyConversion.csproj",
       "packagesPath": "C:\\Users\\cristian.frent\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\PublicApiWinClient\\CurrencyConversion\\obj\\",
+      "outputPath": "D:\\Projects\\PublicApiWinClient-AspNetCore\\CurrencyConversion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
