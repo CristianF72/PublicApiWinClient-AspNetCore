@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConversion", "CurrencyConversion\CurrencyConversion.csproj", "{A5D4DD91-BDE6-41C9-81E6-A124D65A9A62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicApi_AspNetCore_Client", "PublicApiWinClient-AspNetCore\PublicApi_AspNetCore_Client.csproj", "{5CC99A1D-818C-406A-A7E5-144D9D087498}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A5D4DD91-BDE6-41C9-81E6-A124D65A9A62} = {A5D4DD91-BDE6-41C9-81E6-A124D65A9A62}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

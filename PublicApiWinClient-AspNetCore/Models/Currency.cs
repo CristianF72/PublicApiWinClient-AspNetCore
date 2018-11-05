@@ -12,10 +12,15 @@ using PublicApi_AspNetCore_Client.Controllers;
 
 namespace PublicApi_AspNetCore_Client.Models
 {
-    public class Currency
+    public class Currency : IDisposable
     {
         public string Base { get; set; }
         public DateTime Date { get; set; }
         public Dictionary<string, decimal> Rates { get; set; }
+        public decimal ValueAfterConversion { get; set; }
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

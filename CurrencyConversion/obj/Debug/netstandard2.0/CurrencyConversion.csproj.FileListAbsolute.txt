@@ -15,4 +15,3 @@ D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstanda
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.AssemblyInfo.cs
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.dll
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.pdb
-D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.csprojAssemblyReference.cache

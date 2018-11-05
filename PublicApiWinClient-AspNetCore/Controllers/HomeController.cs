@@ -40,9 +40,28 @@ namespace PublicApi_AspNetCore_Client.Controllers
             
         }
         [HttpPost]
-        public ActionResult CurrencyConversion(decimal valueForConversion)
+        public ActionResult CurrencyConversion(Currency model, FormCollection form)
         {
-            //return Content(${valueForConversion})
+            //Currency currency = (Currency)GetCurrency();
+
+            CurrencyConversion.CurrencyConversion currencyConversion = new CurrencyConversion.CurrencyConversion();
+
+            decimal czk = model.Rates["CZK"];
+            decimal gbp = model.Rates["GBP"];
+            decimal ron = model.Rates["RON"];
+            decimal eur = model.Rates["EUR"];
+
+            dynamic valueForConversion = form["valueForConversion"];
+
+            string fromCurrency = form["fromCurrency"];
+
+            string toCurrency = form["toCurrency"];
+
+            model.ValueAfterConversion = currencyConversion.ConverseCurrency(fromCurrency, toCurrency, valueForConversion.Value, czk, gbp, ron, eur);
+
+            //ViewData["myModel"] = currency;
+
+            return View(model);
         }
 
     }
