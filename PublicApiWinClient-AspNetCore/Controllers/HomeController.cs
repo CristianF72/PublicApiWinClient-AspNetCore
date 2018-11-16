@@ -13,10 +13,13 @@ namespace PublicApi_AspNetCore_Client.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
+
+        [HttpGet]
         public ActionResult CurrencyConversion()
         {
             Currency currency = (Currency)GetCurrency();
@@ -39,10 +42,10 @@ namespace PublicApi_AspNetCore_Client.Controllers
 
             
         }
-        [HttpPost]
-        public ActionResult CurrencyConversion(Currency model, FormCollection form)
+        //[HttpGet]
+        public ActionResult CurrencyConversionConvertor(decimal? ValueForConversion, string FromCurrency, string ToCurrency)
         {
-            //Currency currency = (Currency)GetCurrency();
+            Currency model = (Currency)GetCurrency();
 
             CurrencyConversion.CurrencyConversion currencyConversion = new CurrencyConversion.CurrencyConversion();
 
@@ -51,15 +54,15 @@ namespace PublicApi_AspNetCore_Client.Controllers
             decimal ron = model.Rates["RON"];
             decimal eur = model.Rates["EUR"];
 
-            dynamic valueForConversion = form["valueForConversion"];
+            dynamic valueForConversion = ValueForConversion;
 
-            string fromCurrency = form["fromCurrency"];
+            string fromCurrency = FromCurrency;
 
-            string toCurrency = form["toCurrency"];
+            string toCurrency = ToCurrency;
 
-            model.ValueAfterConversion = currencyConversion.ConverseCurrency(fromCurrency, toCurrency, valueForConversion.Value, czk, gbp, ron, eur);
+            model.ValueAfterConversion = currencyConversion.ConverseCurrency(fromCurrency, toCurrency, valueForConversion, czk, gbp, ron, eur);
 
-            //ViewData["myModel"] = currency;
+            ViewData["myModel"] = model;
 
             return View(model);
         }

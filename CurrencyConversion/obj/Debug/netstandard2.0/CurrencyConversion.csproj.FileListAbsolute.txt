@@ -10,6 +10,7 @@ D:\Projects\PublicApiWinClient\CurrencyConversion\obj\Debug\netstandard2.0\Curre
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\bin\Debug\netstandard2.0\CurrencyConversion.deps.json
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\bin\Debug\netstandard2.0\CurrencyConversion.dll
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\bin\Debug\netstandard2.0\CurrencyConversion.pdb
+D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.csprojAssemblyReference.cache
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.csproj.CoreCompileInputs.cache
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.AssemblyInfoInputs.cache
 D:\Projects\PublicApiWinClient-AspNetCore\CurrencyConversion\obj\Debug\netstandard2.0\CurrencyConversion.AssemblyInfo.cs

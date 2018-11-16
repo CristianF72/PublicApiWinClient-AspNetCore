@@ -1,0 +1,91 @@
+﻿@using PublicApi_AspNetCore_Client.Models
+@model PublicApi_AspNetCore_Client.Models.Currency
+@{
+    ViewBag.Title = "Currency conversion";
+}
+
+@{
+    var mod = (Currency)ViewData["myModel"];
+}
+
+@using (Html.BeginForm("CurrencyConversion", "Home", FormMethod.Get, new { mod }))
+{
+    @Html.HiddenFor(model => model.Date)
+    @Html.HiddenFor(model => model.Base)
+    @Html.HiddenFor(model => model.Rates)
+    @Html.HiddenFor(model => model.ValueForConversion)
+    @Html.HiddenFor(model => model.FromCurrency)
+    @Html.HiddenFor(model => model.ToCurrency)
+    @Html.HiddenFor(model => model.ValueAfterConversion)
+
+    <h2>Currency data from Fixer.io:</h2>
+    <div class="col-md-12">
+        <h3>Current date is: @mod.Date</h3>
+    </div>
+    <div class="col-md-12">
+        Reference currency is: @mod.Base
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Currency</th>
+                <th scope="col">Conversion rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>GBP</td>
+                <td>@mod.Rates["GBP"]</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>CZK</td>
+                <td>@mod.Rates["CZK"]</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>RON</td>
+                <td>@mod.Rates["RON"]</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <input type="number" name="@mod.ValueForConversion" class="form-control" placeholder="amount" aria-label="valueForConversion" value="0" aria-describedby="basic-addon1" required>
+            <div class="invalid-feedback">
+                Please provide a valid amount.
+            </div>
+        </div>
+        <div class="input-group-prepend">
+           <label class="input-group-text" for="fromCurrency">From currency:</label>
+        </div>
+        <select class="custom-select" name="@mod.FromCurrency" id="fromCurrency">
+            @*<option selected>Choose...</option>*@
+            <option selected value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="CZK">CZK</option>
+            <option value="RON">RON</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn-primary" name="submit" id="submit">Convert now!</button>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <input type="text" class="form-control" placeholder="result" aria-label="valueAfterConversion" value=@mod.ValueAfterConversion aria-describedby="basic-addon2">
+        </div>
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="toCurrency">To currency:</label>
+        </div>
+        <select class="custom-select" name="@mod.ToCurrency" id="toCurrency">
+            @*<option selected>Choose...</option>*@
+            <option selected value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="CZK">CZK</option>
+            <option value="RON">RON</option>
+        </select>
+    </div>
+
+}
