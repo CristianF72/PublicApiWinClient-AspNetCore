@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "cfe1dc2a80602aef150a12815387068463a61a0d"
+    "signature": "6ee538f0d9546a665b9048304c6b20495d81958e"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,10 +9,17 @@
     ".NETStandard,Version=v2.0/": {
       "CurrencyConversion/1.0.0": {
         "dependencies": {
+          "Microsoft.jQuery.Unobtrusive.Ajax": "3.2.6",
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
           "CurrencyConversion.dll": {}
+        }
+      },
+      "jQuery/1.8.0": {},
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+        "dependencies": {
+          "jQuery": "1.8.0"
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -28,6 +35,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "jQuery/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j+5U/D9DWcMQGUhfx/q14qlU/7UH0oqUa1tC9/4pVwMJSJuKOF+KBBJrv57kzc/2c/vtWdinpUywmEg4jT+zug==",
+      "path": "jquery/1.8.0",
+      "hashPath": "jquery.1.8.0.nupkg.sha512"
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oNKDdH3/MnXOtTAye9x7NuZxEKq3jUpY6IEC6QXZdpk2ta7btCtyh4/JlTqe/X6ufUdG2CTuzV/dKOJQDo1nWA==",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.6",
+      "hashPath": "microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

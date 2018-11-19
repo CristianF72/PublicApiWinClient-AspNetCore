@@ -1,18 +1,10 @@
-﻿@using PublicApi_AspNetCore_Client.Models
-@model PublicApi_AspNetCore_Client.Models.Currency
-@{
-    ViewBag.Title = "Currency conversion";
-}
+﻿@model PublicApi_AspNetCore_Client.Models.Currency
 
-@{
-    var mod = (Currency)ViewData["myModel"];
-}
 
-@*@using (Html.BeginForm("CurrencyConversion", "Home", FormMethod.Get, new { mod }))*@
+    @using (Html.BeginForm("CurrencyConversion", "Home", FormMethod.Post))
+    {
 
-<body>
 
-    <form action="CurrencyConversionConvertor" method="get">
         @Html.HiddenFor(model => model.Date)
         @Html.HiddenFor(model => model.Base)
         @Html.HiddenFor(model => model.Rates)
@@ -23,10 +15,10 @@
 
         <h2>Currency data from Fixer.io:</h2>
         <div class="col-md-12">
-            <h3>Current date is: @mod.Date</h3>
+            <h3>Current date is: Model.Date </h3>
         </div>
         <div class="col-md-12">
-            Reference currency is: @mod.Base
+            Reference currency is: @model.Base
         </div>
         <table class="table">
             <thead>
@@ -40,23 +32,23 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>GBP</td>
-                    <td>@mod.Rates["GBP"]</td>
+                    <td>@model.Rates["GBP"] </ td >
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>CZK</td>
-                    <td>@mod.Rates["CZK"]</td>
+                    <td>@model.Rates["CZK"] </ td >
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>RON</td>
-                    <td>@mod.Rates["RON"]</td>
+                    <td>@model.Rates["RON"] </ td >
                 </tr>
             </tbody>
         </table>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <input type="number" name="ValueForConversion" class="form-control" placeholder="amount" aria-label="valueForConversion" value="0" aria-describedby="basic-addon1" required>
+                <input type="text" name="ValueForConversion" class="form-control" placeholder="amount" aria-label="valueForConversion" value="0" aria-describedby="basic-addon1" required>
                 <div class="invalid-feedback">
                     Please provide a valid amount.
                 </div>
@@ -77,7 +69,7 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <input type="text" class="form-control" placeholder="result" aria-label="valueAfterConversion" value=ValueAfterConversion aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="result" aria-label="valueAfterConversion" value="@model.ValueAfterConversion" aria-describedby="basic-addon2">
             </div>
             <div class="input-group-prepend">
                 <label class="input-group-text" for="toCurrency">To currency:</label>
@@ -90,8 +82,9 @@
                 <option value="RON">RON</option>
             </select>
         </div>
-    </form>
 
-</body>
+   
+
+}
 
 

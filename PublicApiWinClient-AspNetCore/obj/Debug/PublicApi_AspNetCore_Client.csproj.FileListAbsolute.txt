@@ -146,3 +146,9 @@ D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\obj\Debu
 D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\obj\Debug\PublicApi_AspNetCore_Client.csproj.CopyComplete
 D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\obj\Debug\WeatherApp.dll
 D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\obj\Debug\WeatherApp.pdb
+D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\bin\System.Net.Http.Formatting.dll
+D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\bin\System.Web.Http.dll
+D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\bin\System.Net.Http.Formatting.xml
+D:\Projects\PublicApiWinClient-AspNetCore\PublicApiWinClient-AspNetCore\bin\System.Web.Http.xml

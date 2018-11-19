@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using PublicApi_AspNetCore_Client.Models;
@@ -13,13 +14,13 @@ namespace PublicApi_AspNetCore_Client.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        [HttpGet]
+        [System.Web.Mvc.HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
+        [System.Web.Mvc.HttpGet]
         public ActionResult CurrencyConversion()
         {
             Currency currency = (Currency)GetCurrency();
@@ -42,10 +43,10 @@ namespace PublicApi_AspNetCore_Client.Controllers
 
             
         }
-        //[HttpGet]
-        public ActionResult CurrencyConversionConvertor(decimal? ValueForConversion, string FromCurrency, string ToCurrency)
+        [System.Web.Mvc.HttpPost]
+        public ActionResult CurrencyConversion([FromBody] Currency model)
         {
-            Currency model = (Currency)GetCurrency();
+            //Currency model = (Currency)GetCurrency();
 
             CurrencyConversion.CurrencyConversion currencyConversion = new CurrencyConversion.CurrencyConversion();
 
@@ -54,13 +55,13 @@ namespace PublicApi_AspNetCore_Client.Controllers
             decimal ron = model.Rates["RON"];
             decimal eur = model.Rates["EUR"];
 
-            dynamic valueForConversion = ValueForConversion;
+            //dynamic valueForConversion = ValueForConversion;
 
-            string fromCurrency = FromCurrency;
+            //string fromCurrency = FromCurrency;
 
-            string toCurrency = ToCurrency;
+            //string toCurrency = ToCurrency;
 
-            model.ValueAfterConversion = currencyConversion.ConverseCurrency(fromCurrency, toCurrency, valueForConversion, czk, gbp, ron, eur);
+            model.ValueAfterConversion = currencyConversion.ConverseCurrency(model.FromCurrency, model.ToCurrency, (decimal) model.ValueForConversion, czk, gbp, ron, eur);
 
             ViewData["myModel"] = model;
 

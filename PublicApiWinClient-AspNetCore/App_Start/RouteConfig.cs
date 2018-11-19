@@ -13,6 +13,11 @@ namespace PublicApi_AspNetCore_Client
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    "CurrencyConversion",
+            //    "CurrencyConversion/{ValueForConversion, FromCurrency, ToCurrency}",
+            //    new { controller = "Home", action = "CurrencyConversion" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
